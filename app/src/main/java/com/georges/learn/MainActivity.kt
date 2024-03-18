@@ -40,6 +40,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.georges.learn.ui.theme.LearnTheme
+import org.jetbrains.annotations.VisibleForTesting
 import java.text.NumberFormat
 
 
@@ -175,7 +176,8 @@ fun RoundTheTipRow(
     }
 }
 
-private fun calculateTip(amount: Double, tipPercent: Double, roundUp: Boolean ): String {
+@VisibleForTesting
+internal fun calculateTip(amount: Double, tipPercent: Double, roundUp: Boolean ): String {
     var tip = tipPercent / 100 * amount
     if (roundUp) {
         tip = kotlin.math.ceil(tip)
