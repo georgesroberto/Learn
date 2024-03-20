@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Space App</string>
+    <string name="image1_title">Euclid \'dark universe\' telescope gets de-iced from a million miles away</string>
+    <string name="image1_author">Sharmila Kuthunur 2024</string>
+    <string name="image2_title">NASA\'s James Webb Space Telescope mission</string>
+    <string name="image2_author">Robert Lea 2024</string>
+    <string name="image3_title">On This Day in Space: March 19, 1964: Ionospheric satellite fails to reach orbit</string>
+    <string name="image4_author">Hanneke Weltering 2024</string>
+    <string name="image5_title">SpaceX launches 22 Starlink satellites from California in dusky evening liftoff (video)</string>
+    <string name="image5_author">Mike Wall</string>
 </resources>
