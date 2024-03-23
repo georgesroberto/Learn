@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import com.georges.learn.ui.theme.LearnTheme
 
 class MainActivity : ComponentActivity() {
@@ -26,18 +27,18 @@ class MainActivity : ComponentActivity() {
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    GreetingMessage(name = "Georges")
+                    GreetingMessage()
                 }
             }
         }
     }
 }
 
-
+@Preview(showBackground = true)
 @Composable
-fun GreetingMessage(name: String) {
+fun GreetingMessage() {
     Text(
-        text = "Welcome back, $name!",
+        text = "Welcome back!",
         style = MaterialTheme.typography.headlineLarge,
         textAlign = TextAlign.Center,
         modifier = Modifier.fillMaxWidth()
