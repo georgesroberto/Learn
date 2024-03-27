@@ -4,6 +4,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import com.georges.learn.data.MAX_NO_OF_WORDS
 import com.georges.learn.data.SCORE_INCREASE
 import com.georges.learn.data.allWords
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -41,7 +42,7 @@ class GameViewModel : ViewModel() {
         return String(tempWord)
     }
 
-    var userGuess by mutableStateOf("")
+    var userGuess by mutableStateOf(" ")
         private set
     fun updateUserGuess(guessedWord: String){
         userGuess = guessedWord
@@ -49,6 +50,7 @@ class GameViewModel : ViewModel() {
     fun checkUserGuess(){
         if (userGuess.equals(currentWord, ignoreCase = true)){
             val updatedScore = _uiState.value.score.plus(SCORE_INCREASE)
+            updateUserGuess("")
             updatedGameState(updatedScore)
         } else {
             _uiState.update { currentState ->
@@ -57,14 +59,28 @@ class GameViewModel : ViewModel() {
         }
     }
 
-    fun updatedGameState(updatedScore: Int).
-    {
-        _uiState.update { cuurentState ->
-            cuurentState.copy(
-                isGuessedWordWrong = false,
-                currentScrambledWord = pickRandomAndShuffle(),
-                score = updatedScore
-            )
+    fun skipWord(){
+        updatedGameState(_uiState.value.score)
+        updateUserGuess("")
+    }
+    private fun updatedGameState(updatedScore: Int) {
+        if(usedWord.size == MAX_NO_OF_WORDS){
+            _uiState.update { currentState ->
+                currentState.copy(
+                    isGuessedWordWrong = false,
+                    score = updatedScore,
+                    isGameOver = true
+                )
+            }
+        } else {
+            _uiState.update { currentState ->
+                currentState.copy(
+                    isGuessedWordWrong = false,
+                    currentScrambledWord = pickRandomAndShuffle(),
+                    score = updatedScore,
+                    currentWordCount = currentState.currentWordCount.inc()
+                )
+            }
         }
     }
 
