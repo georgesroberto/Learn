@@ -1,4 +1,4 @@
-package com.georges.learn.ui.theme
+package com.georges.learn.ui.theme.theme
 
 import android.app.Activity
 import android.os.Build

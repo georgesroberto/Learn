@@ -1,4 +1,4 @@
-package com.georges.learn.ui.theme
+package com.georges.learn.ui.theme.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
