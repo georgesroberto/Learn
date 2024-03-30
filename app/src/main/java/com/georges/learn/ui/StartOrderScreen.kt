@@ -33,8 +33,9 @@ import com.georges.learn.ui.theme.LearnTheme
  */
 @Composable
 fun StartOrderScreen(
+    modifier: Modifier = Modifier,
     quantityOptions: List<Pair<Int, Int>>,
-    modifier: Modifier = Modifier
+    onNextButtonClicked: (Int) -> Unit = {},
 ) {
     Column(
         modifier = modifier,
@@ -68,7 +69,7 @@ fun StartOrderScreen(
             quantityOptions.forEach { item ->
                 SelectQuantityButton(
                     labelResourceId = item.first,
-                    onClick = {}
+                    onClick = { onNextButtonClicked(item.second) }
                 )
             }
         }
@@ -99,6 +100,7 @@ fun StartOrderPreview() {
    LearnTheme {
         StartOrderScreen(
             quantityOptions = DataSource.quantityOptions,
+            onNextButtonClicked = {},
             modifier = Modifier
                 .fillMaxSize()
                 .padding(dimensionResource(R.dimen.padding_medium))
