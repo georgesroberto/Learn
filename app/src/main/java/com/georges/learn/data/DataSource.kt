@@ -1,4 +1,4 @@
-package com.georges.learn.ui.data
+package com.georges.learn.data
 
 import com.georges.learn.R
 

@@ -1,4 +1,4 @@
-package com.georges.learn.ui.data
+package com.georges.learn.data
 
 data class OrderUiState(
     /** Selected cupcake quantity (1, 6, 12) */
