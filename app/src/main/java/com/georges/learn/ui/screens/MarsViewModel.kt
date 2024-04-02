@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.georges.learn.network.MarsApi
 import kotlinx.coroutines.launch
+import java.io.IOException
 
 class MarsViewModel : ViewModel() {
     /** The mutable State that stores the status of the most recent request */
@@ -22,12 +23,15 @@ class MarsViewModel : ViewModel() {
 
     /**
      * Gets Mars photos information from the Mars API Retrofit service and updates the
-     * [MarsPhoto] [List] [MutableList].
      */
-    fun getMarsPhotos() {
+    private fun getMarsPhotos() {
         viewModelScope.launch {
-            val listResult = MarsApi.retrofitService.getPhotos()
-            marsUiState = listResult
+            try{
+                val listResult = MarsApi.retrofitService.getPhotos()
+                marsUiState = listResult
+            } catch(e: IOException){
+                /*TODO: IMPLEMENT */
+            }
         }
     }
 }
