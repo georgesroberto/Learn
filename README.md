@@ -20,6 +20,7 @@ Kotlin Mobile App Playground
 12. Lemonade
 13. DiceRoller
 
+
 ## Credits
 
-<!-- TODO:  -->
+- All credits go to the android development platform for their guidance and inspiration of each of the apps.
