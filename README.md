@@ -20,6 +20,10 @@ Kotlin Mobile App Playground
 12. Lemonade
 13. DiceRoller
 
+## Notes
+
+Importantly the step by step guidance overview of each app is documented in the (Kotlin Repositpory)[https://github.com/georgesroberto/Kotlin].
+> Get insights from the step by step guidance toward better mobile app development.
 
 ## Credits
 
